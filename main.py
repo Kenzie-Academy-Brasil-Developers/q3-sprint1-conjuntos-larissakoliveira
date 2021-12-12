@@ -329,7 +329,7 @@ print(popular_only_spanish_fruits(popular_fruits, spanish_fruits, japanese_fruit
 ################################################################################################
 
 def only_yahoo_emails(emails_list):
-    output = {email for email in emails_list if email.find('yahoo') > 0}
+    output = {email for email in emails_list if email.lower().find('yahoo') > 0}
     return set(output)
 
 print(only_yahoo_emails(emails))
@@ -339,7 +339,7 @@ print(only_yahoo_emails(emails))
 def only_hotmail_emails(emails_list):
     output = []
     for email in emails_list:
-        if email.find('hotmail') > 0:
+        if email.lower().find('hotmail') > 0:
             output.append(email)
     return set(output)
 
@@ -348,7 +348,7 @@ print(only_hotmail_emails(emails))
 ################################################################################################
 
 def only_br_emails(emails_list):
-    output = set(email for email in emails_list if email.endswith('br')) 
+    output = set(email for email in emails_list if email.lower().endswith('br')) 
     return output
 
 print(only_br_emails(emails))
